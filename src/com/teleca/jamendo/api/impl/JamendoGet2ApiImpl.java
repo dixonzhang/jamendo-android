@@ -101,7 +101,7 @@ public class JamendoGet2ApiImpl implements JamendoGet2Api {
 			if (count != 0 && page != 0) {
 				pagination = "&n=" + count + "&pn=" + page;
 			}
-			String jsonString = doGet("numalbum+id+name+duration+rating+url+stream/track/json/?album_id=" + album.getId() + "&streamencoding="/* + encoding + pagination*/);
+			String jsonString = doGet("numalbum+id+name+duration+rating+url+stream/track/json/?album_id=" + album.getId() + "&streamencoding=" + encoding + pagination);
 			JSONArray jsonArrayTracks = new JSONArray(jsonString);
 			
 			return getTracks(jsonArrayTracks, true);
